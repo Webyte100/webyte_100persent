@@ -13,7 +13,7 @@ public class ProductReview {
 	@JoinColumn(name="userId") //joining the userId column (from Users java program) to this table
 	private User user;
 	
-	//Each review is about a product
+	//Each review is about a single product
 	@ManyToOne
 	@JoinColumn(name="prodId") //joining the prodId column (from Products java program) to this table
 	private Product products;

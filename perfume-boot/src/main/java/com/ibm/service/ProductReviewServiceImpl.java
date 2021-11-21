@@ -1,6 +1,6 @@
 package com.ibm.service;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,11 +13,22 @@ import com.ibm.repo.ProductReviewRepository;
 public class ProductReviewServiceImpl implements ProductReviewService{
 
 	@Qualifier("productReviewRepository")
+	
 	@Autowired
 	private ProductReviewRepository prodrev_repo;
+	
+//	@Override
+//	public Optional<ProductReview> findAllProductsByRating(int rating) {
+//		return prodrev_repo.findProductByRating(rating) ;
+//	}
+	
 	@Override
-	public Optional<ProductReview> findAllProductsByRating(int rating) {
-		return prodrev_repo.findProductByRating(rating) ;
+	public void saveReview(ProductReview review) {
+		prodrev_repo.save(review);
+		
 	}
-
+	@Override
+	public List<ProductReview> findReviewByRating(int rating) {
+		return prodrev_repo.findProductByRating(rating);
+	}
 }

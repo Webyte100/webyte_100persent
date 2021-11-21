@@ -1,5 +1,8 @@
 package com.ibm.test;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -14,30 +17,51 @@ import com.ibm.service.UserService;
 public class TestUserService {
 
 	@Autowired
-	private TestUserService service;
+	private UserService service;
 	
 	@Test
 	public void testSaveUser() {
 		User u1 = new User();
-		u1.setFullName("yashu");
-		u1.setEmailId("yashu@gmail");
-		u1.setPasswd("vihitha");
-		u1.setPhoneNo(1234567890);
-		u1.setLineOne("XYZ");
-		u1.setLineTwo("ABC");
-		u1.setCity("ATM");
-		u1.setState("MH");
-		u1.setPincode(123456);
+		u1.setFullName("Payal");
+		u1.setEmailId("payal@gmail.com");
+		u1.setPasswd("payu0987");
+		u1.setPhoneNo(1080909090);
+		u1.setLineOne("123, Road 1");
+		u1.setLineTwo("New Street");
+		u1.setCity("Mumbai");
+		u1.setState("Maharastra");
+		u1.setPincode(109010);
 		
-		service.save(u1);
+		service.saveUser(u1);
 	}
 	
 	@Test
-	public void testfindUserByEmailAndPasswd() {
-		User u1 = service.findUserByEmailAndPasswd("yashu@gmail","vihitha");
+	public void testFindUserByMailAndPassword() {
+		User u1 = service.findUserByEmailAndPasswd("payal@gmail.com", "payu0987");
+		assertNotNull(u1);
 	}
-
-
 	
-
+	@Test
+	public void testInvalidFindUserByMailAndPassword() {
+		User u1 = service.findUserByEmailAndPasswd("payal@gmail.com", "payu789");
+		assertNull(u1);
+	}
+	
+	@Test
+	public void testFindUserByPhone() {
+		User u1 = service.findUserByPhoneNumber(1234214251);
+		assertNotNull(u1);
+	}
+	
+	@Test
+	public void testInvalidFindUserByPhone() {
+		User u1 = service.findUserByPhoneNumber(1234214251);
+		assertNull(u1);
+	}
+	
+	@Test
+	public void testFetchAllUsers() {
+		List<User> users = service.getAllUsers();
+		assertNotNull(users);
+	}
 }

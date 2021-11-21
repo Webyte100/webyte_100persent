@@ -7,13 +7,13 @@ import com.ibm.entity.User;
 
 public interface UserService {
 
-	    void save(User user);
+	    void saveUser(User user);
 
-	    User findUserByEmailAndPasswd(String email, String passwd);
+	    User findUserByEmailAndPasswd(String emailId, String passwd);
 	    
 	    User findUserByPhoneNumber(long phoneNo);
 	    
-	    List<User>getAllUsers();
+	    List<User> getAllUsers();
 	    
 	    //User authenticate(Login login);
 	}

@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
 	    @Transactional
 	    @Override
-	    public void save(User user) {
+	    public void saveUser(User user) {
 	        user_repo.save(user);
 	    }
 

@@ -26,20 +26,20 @@ public class Product {
 	@Column(length=30)
 	private String category; //type
 	
-	@Column(length=30)
+	@Column
 	private int sku;
 	
 	@Column(length=30)
 	private long price;
 	
-	@Column(length=30)
+	@Column
 	private int discount;
 	
-	@Column(length=30)
+	@Column
 	private int quantity;
 	
 	@Column(length=250)
-	private int summary;
+	private String summary;
 
 	public int getProdId() {
 		return prodId;
@@ -121,11 +121,11 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public int getSummary() {
+	public String getSummary() {
 		return summary;
 	}
 
-	public void setSummary(int summary) {
+	public void setSummary(String summary) {
 		this.summary = summary;
 	}
 }

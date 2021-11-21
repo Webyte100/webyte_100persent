@@ -14,12 +14,13 @@ import com.ibm.service.UserService;
 
 @RestController
 public class UserController {
+
 	@Autowired
 	private UserService service;
 	
 	@PostMapping(value="/user",consumes="application/json")
 	public String addUser(@RequestBody User u) {
-		service.save(u);
+		service.saveUser(u);
 		return "User is successfully added!";
 	}
 	
@@ -28,4 +29,14 @@ public class UserController {
 		return service.findUserByEmailAndPasswd(emailId, passwd);
 	}
 
+	@GetMapping(value="/user/{phoneNo}", produces="application/json")
+	public User getUserByPhoneNo(@PathVariable long PhoneNo) {
+		return service.findUserByPhoneNumber(PhoneNo);
+	}
+	
+	@GetMapping(value="/users", produces="application/json")
+	public List<User> getAll(){
+		return service.getAllUsers();
+	}
+	
 }

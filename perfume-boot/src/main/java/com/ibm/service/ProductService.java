@@ -4,16 +4,16 @@ import java.util.List;
 import com.ibm.entity.*;
 
 public interface ProductService {
+	
 	    void saveProduct(Product product);
 
 	    List<Product> findAllProducts();
 
-	    List<Product> findAllProductByName(String prodName);
+	    List<Product> findAllProductsByName(String prodName);
 	    
-	    List<Product> findAllProductByPrice(long price);
+	    List<Product> findAllProductsByPrice(long price);
 	    
-	    List<Product> findAllProductByCategory(String category);
+	    List<Product> findAllProductsByCategory(String category);
 	    
-	    List<Product> findAllProductByDiscount(int discount);    
-
+	    List<Product> findAllProductsByDiscount(int discount);   
 }

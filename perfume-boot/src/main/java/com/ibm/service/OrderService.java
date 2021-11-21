@@ -1,5 +1,5 @@
 package com.ibm.service;
 
-public class OrderService {
+public interface OrderService {
 
 }
