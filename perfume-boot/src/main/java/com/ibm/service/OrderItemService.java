@@ -1,16 +1,23 @@
 package com.ibm.service;
 
+import java.util.List;
+
+import com.ibm.entity.OrderItem;
 import com.ibm.entity.Product;
 
 public interface OrderItemService {
-	//void saveProduct(Product product);
 	
-		//void delete(String product);
+	void save(OrderItem item);
+	
+//	Product findAllProductsByorderId();
+	
+//	List<Product> findAllProducts();
+	
+	void delete(int product);
 		
-		//void updateProduct(int quantity);
+//	void updateProduct(int quantity);
 		
-		//void updatePrice(long price);
-		
+	void updatePrice(int id, long price);
 
 }
 

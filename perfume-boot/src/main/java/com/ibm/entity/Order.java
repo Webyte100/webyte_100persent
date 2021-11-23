@@ -1,3 +1,10 @@
+/**
+* This class describes entity of Order. Creating Table and mentioning Column names.
+*Getters and Setters are taken.
+*@author K.Vihitha, T.M.Yasaswini
+*@version 1.8.0_311
+**/
+
 package com.ibm.entity;
 
 import javax.persistence.*;
@@ -15,6 +22,15 @@ public class Order {
 	
 	@Column(length=30)
 	private int subTotal; //sub is trigger for (price * quantity) in orderItem entity table
+	
+	@Column(length=30)
+	private int itemDiscount;
+	
+	@Column(length=30)
+	private int ShipCharges;
+	
+	@Column(length=30)
+	private int total;
 	
 	public int getOrderId() {
 		return orderId;
@@ -60,16 +76,8 @@ public class Order {
 		return total;
 	}
 
-	public void setTotal(int total) {
-		this.total = total;
+	public void setTotal() {
+		this.total = (subTotal - itemDiscount) + ShipCharges;
 	}
 
-	@Column(length=30)
-	private int itemDiscount;
-	
-	@Column(length=30)
-	private int ShipCharges;
-	
-	@Column(length=30)
-	private int total;
 }

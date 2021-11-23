@@ -18,7 +18,7 @@ public class ProductController {
 	@Autowired
 	private ProductService service;
 	
-	@PostMapping(value="/product", consumes="application.json")
+	@PostMapping(value="/product", consumes="application/json")
 	public String addProduct(@RequestBody Product p) {
 		service.saveProduct(p);
 		return "Product Added in the list";

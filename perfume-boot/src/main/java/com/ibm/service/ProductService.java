@@ -8,7 +8,9 @@ public interface ProductService {
 	    void saveProduct(Product product);
 
 	    List<Product> findAllProducts();
-
+	    
+//	    List<Product> findAllProductsByPriceRange(String priceRange);
+	    
 	    List<Product> findAllProductsByName(String prodName);
 	    
 	    List<Product> findAllProductsByPrice(long price);

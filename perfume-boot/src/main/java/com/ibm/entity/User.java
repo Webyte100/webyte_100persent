@@ -1,3 +1,10 @@
+/**
+* This class describes entity of User. Creating Table and mentioning Column names.
+* Getters and Setters are taken.
+* @author K.Vihitha, T.M.Yasaswini
+* @version 1.8.0_311
+**/
+
 package com.ibm.entity;
 
 import java.util.*;

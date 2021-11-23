@@ -1,3 +1,10 @@
+/**
+* This class describes entity of Order_Item. Creating Table and mentioning Column names.
+*Getters and Setters are taken.
+*@author K.Vihitha, T.M.Yasaswini
+*@version 1.8.0_311
+**/
+
 package com.ibm.entity;
 
 import javax.persistence.*;
@@ -19,10 +26,44 @@ public class OrderItem {
 	private Product products;
 	
 	@Column
+	private int SKU;
+	
+	public int getSKU() {
+		return SKU;
+	}
+
+	public void setSKU(int sKU) {
+		SKU = sKU;
+	}
+
+	@Column
 	private long price;
 	
 	@Column
 	private int quantity;
+	
+	@Column(length=25)
+	private String addToCart;
+	
+	@Column
+	private int priceRange;
+	
+	public int getPriceRange() {
+		return priceRange;
+	}
+
+	public void setPriceRange(int priceRange) {
+		this.priceRange = priceRange;
+	}
+
+
+	public String getAddToCart() {
+		return addToCart;
+	}
+
+	public void setAddToCart(String addToCart) {
+		this.addToCart = addToCart;
+	}
 
 	public int getItemId() {
 		return itemId;
@@ -54,6 +95,9 @@ public class OrderItem {
 
 	public void setPrice(long price) {
 		this.price = price;
+	}
+	public void setPrice() {
+		this.price = price * quantity;			//Updates the price in cart when items are added or removed
 	}
 
 	public int getQuantity() {

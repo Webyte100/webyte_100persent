@@ -1,5 +1,6 @@
 package com.ibm.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -47,6 +48,17 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<Product> findAllProductsByDiscount(int discount) {
 		return prod_repo.findProductByDiscount(discount);
+	}
+	
+	public List<Product> findByRange(int min, int max){
+		List<Product> prod = new ArrayList<Product>();
+		for( Product p: prod_repo.findAll() ) { 
+			//Using a for-each loop to access all products
+			if(p.getPrice()>=min && p.getPrice()<=max)
+				prod.add(p);
+			//Checking price and adding to list
+		}
+		return prod;
 	}
 	
 }
