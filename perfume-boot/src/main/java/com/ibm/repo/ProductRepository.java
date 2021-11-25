@@ -10,9 +10,9 @@ import java.util.List;
 @Repository("ProductRepository")
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    List<Product> findProductByProductId(Integer prodId);
+    List<Product> findProductByProdId(Integer prodId);
 
-    List<Product> findProductByProductName(String prodName);
+    List<Product> findProductByProdName(String prodName);
     
     List<Product> findProductByCategory(String category);
     

@@ -21,7 +21,7 @@ import com.ibm.repo.UserRepository;
 @Service("userService")
 
 public class UserServiceImpl implements UserService {
-	 @Qualifier("userRepository")
+	 @Qualifier("UserRepository")
 	 
 	 	/** Injecting repository for User database interaction*/
 	    @Autowired
@@ -34,11 +34,11 @@ public class UserServiceImpl implements UserService {
 	        user_repo.save(user);
 	    }
 
-	    @Override
+//	    @Override
 	    /**Method to find User by Mail ID and Password from database*/
-	    public User findUserByEmailAndPasswd(String email, String passwd) {
-	        return user_repo.findUserByEmailAndPasswd(email, passwd);
-	    }
+//	    public User findUserByEmailAndPasswd(String email, String passwd) {
+//	        return user_repo.findUserByEmailAndPasswd(email, passwd);
+//	    }
 
 		@Override
 		/**Method to find User by Phone Number from database*/

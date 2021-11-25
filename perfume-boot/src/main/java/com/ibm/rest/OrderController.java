@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.entity.Order;
 import com.ibm.service.OrderService;
+import com.ibm.service.OrderServiceImpl;
 
 @RestController
 public class OrderController {
 
 	@Autowired
-	private OrderService service;
+	private OrderServiceImpl service;
 	
 	@GetMapping(value="/orders", produces="application/json")
-	public List<Order> getAll(){
-		return service.findAllOrders();
+	public List<Order> getOrders(){
+		return service.getAll();
 	}
 }

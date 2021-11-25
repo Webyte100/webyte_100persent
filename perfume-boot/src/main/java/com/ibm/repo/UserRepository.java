@@ -7,7 +7,7 @@ import com.ibm.entity.User;
 
 @Repository("UserRepository")
 public interface UserRepository extends JpaRepository<User, Integer> {
-	User findUserByEmailAndPasswd(String email, String passwd);
+//	User findUserByEmailAndPasswd(String email, String passwd);
 
     User findUserByPhoneNumber(long phoneNo);
 }

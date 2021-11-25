@@ -11,7 +11,7 @@ import com.ibm.repo.ProductReviewRepository;
 @Service("productReviewService")
 public class ProductReviewServiceImpl implements ProductReviewService{
 
-	@Qualifier("productReviewRepository")
+	@Qualifier("ProductReviewRepository")
 	
 	@Autowired
 	private ProductReviewRepository prodrev_repo;

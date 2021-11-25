@@ -16,7 +16,7 @@ public interface UserService {
 
 	    void saveUser(User user);
 
-	    User findUserByEmailAndPasswd(String emailId, String passwd);
+//	    User findUserByEmailAndPasswd(String emailId, String passwd);
 	    
 	    User findUserByPhoneNumber(long phoneNo);
 	    

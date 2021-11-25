@@ -15,7 +15,7 @@ import com.ibm.repo.ProductRepository;
 @Service("productService")
 public class ProductServiceImpl implements ProductService {
 
-	@Qualifier("productRepository")
+	@Qualifier("ProductRepository")
 	@Autowired
 	private ProductRepository prod_repo;
 
@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Product> findAllProductsByName(String prodName) {
-		return prod_repo.findProductByProductName(prodName);
+		return prod_repo.findProductByProdName(prodName);
 	}
 
 	@Override

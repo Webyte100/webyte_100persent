@@ -24,10 +24,10 @@ public class UserController {
 		return "User is successfully added!";
 	}
 	
-	@GetMapping(value="/user/{emailId}/{passwd}", produces="application/json")
-	public User getUserByMailAndPassword(@PathVariable String emailId, String passwd) {
-		return service.findUserByEmailAndPasswd(emailId, passwd);
-	}
+//	@GetMapping(value="/user/{emailId}/{passwd}", produces="application/json")
+//	public User getUserByMailAndPassword(@PathVariable String emailId, String passwd) {
+//		return service.findUserByEmailAndPasswd(emailId, passwd);
+//	}
 
 	@GetMapping(value="/user/{phoneNo}", produces="application/json")
 	public User getUserByPhoneNo(@PathVariable long PhoneNo) {

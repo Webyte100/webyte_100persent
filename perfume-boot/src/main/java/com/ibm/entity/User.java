@@ -17,11 +17,11 @@ public class User {//give trigger of sku from products table
 	private int userId;
 	
 	//each user can give MORE THAN 1 reviews
-	@OneToMany(mappedBy = "users") //on line "12" in orderItem java program
+	@OneToMany(mappedBy = "user") //on line "12" in orderItem java program
 	private List<ProductReview> revUid;
-	
-	//each user is associated with many orderItems
-	@OneToMany(mappedBy = "users") //on line "12" in orderItem java program
+//	
+//	//each user is associated with many orderItems
+	@OneToMany(mappedBy = "user") //on line "12" in orderItem java program
 	private List<OrderItem> itemUid;
 	
 	@Column(length=30)
@@ -34,7 +34,7 @@ public class User {//give trigger of sku from products table
 	private String passwd;
 	
 	@Column
-	private long phoneNo;
+	private long phoneNumber;
 	
 	@Column(length=50)
 	private String lineOne;
@@ -99,12 +99,12 @@ public class User {//give trigger of sku from products table
 		this.passwd = passwd;
 	}
 
-	public long getPhoneNo() {
-		return phoneNo;
+	public long getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhoneNo(long phoneNo) {
-		this.phoneNo = phoneNo;
+	public void setPhoneNumber(long phoneNo) {
+		this.phoneNumber = phoneNo;
 	}
 
 	public String getLineOne() {

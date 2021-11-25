@@ -10,9 +10,9 @@ import com.ibm.entity.OrderItem;
 public interface OrderItemRepository extends JpaRepository<OrderItem, Integer> {
 
 	
-	List<OrderItem> findOrderItemByOrderId(int orderId);
+	List<OrderItem> findOrderItemByItemId(int orderId);
 
-    OrderItem findOrderItemByOrderIdAndProductId(int orderId, int id);
+//    OrderItem findOrderItemByOrderIdAndProductId(int orderId, int id);
 
 }
 
